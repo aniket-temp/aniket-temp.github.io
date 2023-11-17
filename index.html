@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title> Monika & Aniket | Ring Ceremony</title>
+    <link rel="icon" type="image/x-icon" href="favicon.jpeg">
+    <meta name="author" content="Aniket Dagar" />
+    <meta name="description" content="Ring Ceremony website of Monika & Aniket" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="dist/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:url" content="http://www.nikan.co.in" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ring Ceremony website of Monika & Aniket" />
+    <meta property="og:description" content="We Are Getting Engaged on Nov 19th! Join Us! " />
+    <meta property="og:image" content="https://w0.peakpx.com/wallpaper/303/416/HD-wallpaper-ring-ceremony-love-rings.jpg" />
+</head>
+
+<body>
+
+    <div class="logo">
+        <div class="container">Monika &amp; Aniket</div>
+        <p>.</p>
+
+    </div>
+    <div id="outer-wrapper">
+        <div class="section" id="spotlight">
+            <div class="container">
+                <h1 data-depth="0.10" class="spotlight col-md-10 layer col-md-push-1">We <br>Are <br>getting<br> engaged
+                    <br><span class="class-date">19th November 2023</span>
+                </h1>
+
+
+            </div>
+            <img src="images/scroll.png" class="scroll" alt="Scroll">
+        </div>
+        <div class="section kavya" id="kavya">
+            <div class="inner">
+                <div class="container">
+                    <div class="col-md-10 col-md-push-2">
+                        <h2 class="absolute animation">Moni <br> ka</h2>
+                        <div class="box"></div>
+                        <div data-depth="0.10" class="layer absolute shadow box"></div>
+                        <img data-depth="-0.10" id="kav" data-depth="2" class="layer scale-monika"
+                            src="images/monika.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section vineeth" id="vineeth">
+            <span class="and">&</span>
+            <div class="inner">
+                <div class="container">
+                    <div class="col-md-10  col-md-push-2">
+                        <div class="box"></div>
+
+                        <h2 class="absolute animation right">Anik<br>et</h2>
+                        <div data-depth="0.10" class="layer absolute shadow box"></div>
+                        <img id="vin" data-depth="-0.11" class="layer  scale-aniket" src="images/aniket.png"
+                            alt="vin" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="section joinus" id="joinus">
+            <div class="inner">
+
+                <div class="container">
+                    <div class="col-md-10 col-md-push-2">
+                        <div class="box-custom"></div>
+                        <div data-depth="-0.01" class="absolute shadow layer box"></div>
+                        <iframe data-depth="-0.10" class="layer scale-video"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        </iframe>
+                        <h2 data-depth="0.10" class="layer absolute">Join us <span>on <a style="color: red;"
+                                    href="https://www.facebook.com/events/951022738309661/" target="_blank">
+                                    Youtube</a> </span></h2>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="section" id="photos">
+            <div class="inner layer" data-depth="0.11">
+                <div class="container">
+                </div>
+            </div>
+        </div> -->
+
+
+
+        <div class="section countdown" id="countdown">
+            <div class="inner">
+                <div class="container">
+                    <div class="col-md-6"><img data-depth="0.11" class="layer dance" src="images/monika-2.png" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="countdown-wrapper layer" data-depth="-0.11"
+                            style="transform: translate3d(0.242px, -1.342px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+                            <h2><span id="daysRemaining"></span> <em>days to go</em></h2>
+                            <p>Use <a target="_blank" href="https://www.instagram.com/explore/tags/Nikan">#Nikan
+                                </a> on Instagram</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://use.typekit.net/ukb8hia.js"></script>
+    <script>try { Typekit.load({ async: true }); } catch (e) { }</script>
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="dist/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="jquery.fullPage.js"></script>
+    <script type="text/javascript" src="parallax.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#outer-wrapper').fullpage({
+                scrollBar: true
+            });
+            const oneDay = 24 * 60 * 60 * 1000;
+            const firstDate = new Date(2023, 10, 19);
+            const secondDate = new Date();
+
+            const nonAbsDiff = (firstDate - secondDate) / oneDay;
+            let diffDays = Math.ceil(Math.abs((firstDate - secondDate) / oneDay));
+            if (diffDays === 0) {
+                diffDays = 'Today'
+            }
+
+            $('#daysRemaining').text(diffDays)
+            var vineeth = document.getElementById('vineeth');
+            var kavya = document.getElementById('kavya');
+            var savethedate = document.getElementById('savethedate');
+            var spotlight = document.getElementById('spotlight');
+            var joinus = document.getElementById('joinus');
+            var parallax = new Parallax(kavya);
+            var parallax = new Parallax(vineeth);
+            var parallax = new Parallax(savethedate);
+            var parallax = new Parallax(spotlight);
+            var parallax = new Parallax(joinus);
+            var parallax = new Parallax(photos);
+            var parallax = new Parallax(countdown);
+            $('html').loadie();
+        });
+    </script>
+</body>
+
+</html>
